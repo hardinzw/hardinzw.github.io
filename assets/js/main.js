@@ -144,6 +144,33 @@
 					visibleClass: 'header-visible'
 				});
 
+	// Project descriptions: "See more" toggle for clamped text.
+		$('.features article .inner p').each(function() {
+
+			var $p = $(this),
+				$button = $('<button type="button" class="see-more" aria-expanded="false">See more</button>')
+					.insertAfter($p)
+					.on('click', function() {
+
+						var expanded = $p.toggleClass('expanded').hasClass('expanded');
+
+						$button
+							.text(expanded ? 'See less' : 'See more')
+							.attr('aria-expanded', expanded);
+
+					});
+
+			// Only show the button when the text is actually cut off.
+				function update() {
+					if (!$p.hasClass('expanded'))
+						$button.prop('hidden', $p[0].scrollHeight <= $p[0].clientHeight + 1);
+				}
+
+				update();
+				$window.on('load resize', update);
+
+		});
+
 	// Scrolly.
 		$('.scrolly').scrolly({
 			speed: 1000,

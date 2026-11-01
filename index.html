@@ -1,11 +1,18 @@
 <!DOCTYPE HTML>
 
-<html>
+<html lang="en">
 
 <head>
-	<title>zHardin Portfolio</title>
+	<title>Zachary Hardin | Software Engineer</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="Zachary Hardin is a Richmond, Virginia software engineer building C#/.NET ETL pipelines, compliance systems and web apps for the appraisal and mortgage industries." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://hardinzw.github.io/" />
+	<meta property="og:title" content="Zachary Hardin | Software Engineer" />
+	<meta property="og:description" content="Software engineer building C#/.NET ETL pipelines, compliance systems and web apps for the appraisal and mortgage industries." />
+	<meta property="og:image" content="https://hardinzw.github.io/images/cover.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,7 +25,7 @@
 
 	<section id="header">
 		<header>
-			<span class="image avatar"><img src="images/HS-Business-Casual.jpg" alt="my image" /></span>
+			<span class="image avatar"><img src="images/headshot.jpg" alt="Zachary Hardin headshot" /></span>
 			<h1 id="logo">Zachary Hardin</h1>
 			<!-- <p>In our line of work,<br />
 				I'm considered a feature</p> -->
@@ -29,7 +36,6 @@
 				<li><a href="#experience">Experience</a></li>
 				<li><a href="#skills">Skills</a></li>
 				<li><a href="#projects">Projects</a></li>
-				<!--<li><a href="#four">Contact</a></li>-->
 			</ul>
 		</nav>
 
@@ -37,7 +43,7 @@
 			<ul class="icons">
 				<li><a href="assets/docs/Zachary_Hardin_Resume_2026.pdf" target="_blank" rel="noopener"
 						class="icon solid fa-file-pdf"><span class="label">Resum&eacute;</span></a></li>
-				<li><a href="https://github.com/hardinzw" class="icon brands fa-github"><span
+				<li><a href="https://github.com/hardinzw" class="icon brands fa-github" target="_blank" rel="noopener"><span
 							class="label">Github</span></a></li>
 				<li><a href="mailto:hardinzw@gmail.com" class="icon solid fa-envelope"><span
 							class="label">Email</span></a></li>
@@ -54,15 +60,20 @@
 			<!-- One -->
 			<section id="about">
 				<div class="image main" data-position="center">
-					<img src="images/Cover Photo.png" alt="" />
+					<img src="images/cover.jpg" alt="Zachary Hardin, Richmond, Virginia" />
 				</div>
 				<div class="container">
 					<header class="major">
 						<h2>Software Engineer</h2>
 						<p>5+ years architecting ETL pipelines, compliance systems, and administrative tools for the
-							appraisal and mortgage industries. A background in business management keeps me focused on what 
+							appraisal and mortgage industries. A background in business management keeps me focused on what
 							matters most: the team I build with and the people who rely on what we ship.</p>
 					</header>
+					<ul class="actions mobile-actions">
+						<li><a href="assets/docs/Zachary_Hardin_Resume_2026.pdf" class="button primary" target="_blank"
+								rel="noopener">Download Resum&eacute;</a></li>
+						<li><a href="mailto:hardinzw@gmail.com" class="button">Get in Touch</a></li>
+					</ul>
 				</div>
 			</section>
 
@@ -130,6 +141,19 @@
 							</div>
 						</div>
 						<div class="skill-group">
+							<h4>Web &amp; Cloud</h4>
+							<div class="pill-row">
+								<span class="pill">React</span>
+								<span class="pill">TypeScript</span>
+								<span class="pill">Tailwind CSS</span>
+								<span class="pill">Vite</span>
+								<span class="pill">Cloudflare Workers</span>
+								<span class="pill">Cloudflare D1</span>
+								<span class="pill">Stripe</span>
+								<span class="pill">GitHub Actions</span>
+							</div>
+						</div>
+						<div class="skill-group">
 							<h4>Databases &amp; Platforms</h4>
 							<div class="pill-row">
 								<span class="pill">SQL Server</span>
@@ -168,138 +192,61 @@
 					<div class="features">
 						<article>
 							<a href="https://shortstackobx.com" class="image" target="_blank" rel="noopener">
-								<img src="images/shortStackOBXThumbnail.png" alt="short-stack-obx" loading="lazy" />
+								<img src="images/shortStackOBXThumbnail.jpg" alt="Short Stack OBX homepage with rental photos and booking buttons" loading="lazy" />
 							</a>
 							<div class="inner">
 								<h4>Short Stack OBX</h4>
-								<p>Website for Summer Rental Property in Nags Head North Carolina. 
-									Hosted via Cloudflare, integrated with Stripe for payment processing and Houfy/VRBO for booking management.</p>
+								<p>Short Stack OBX is the website for an Outer Banks vacation rental, where guests can browse photos, see open weeks and book directly instead of going through Vrbo or Houfy.
+									It's a hand-written HTML/CSS/JavaScript page with no framework, served by a Cloudflare Worker that also runs a small booking API backed by a Cloudflare D1 (SQLite) database.
+									Payments go through Stripe Checkout, so card details never touch the site, and Stripe webhooks with verified signatures move each booking from hold to paid.
+									To prevent double bookings, the Worker checks direct bookings and the live Vrbo and Houfy calendars, holds the week while the guest pays, and refunds automatically if the week was taken in the meantime.
+									It also publishes its own iCal feed so the listing platforms block booked weeks too, and GitHub Actions deploys the site and API together on every push.</p>
+								<div class="pill-row">
+									<span class="pill">JavaScript</span>
+									<span class="pill">Cloudflare Workers</span>
+									<span class="pill">Cloudflare D1</span>
+									<span class="pill">Stripe</span>
+									<span class="pill">GitHub Actions</span>
+								</div>
 								<ul class="project-icons">
-									<li><a href="https://shortstackobx.com" class="fas fa-link" target="_blank" rel="noopener"></a>
+									<li><a href="https://shortstackobx.com" class="fas fa-link" target="_blank" rel="noopener"
+											aria-label="Visit Short Stack OBX"></a>
 									</li>
 									<li><a href="https://github.com/hardinzw/ShortStackOBX"
-											class="fas fa-code-branch" target="_blank" rel="noopener"></a>
+											class="fas fa-code-branch" target="_blank" rel="noopener"
+											aria-label="Short Stack OBX source code on GitHub"></a>
 									</li>
 								</ul>
 							</div>
 						</article>
 						<article>
 							<a href="https://dynasty-data.shortstack-booking.workers.dev/" class="image" target="_blank" rel="noopener">
-								<img src="images/dynastyDataThumbnail.png" alt="dynasty-data" loading="lazy" />
+								<img src="images/dynastyDataThumbnail.jpg" alt="Dynasty Data breakout board ranking players by breakout score" loading="lazy" />
 							</a>
 							<div class="inner">
 								<h4>Dynasty Data</h4>
-								<p>A React and TypeScript web app on Cloudflare Workers that predicts dynasty fantasy football breakouts, 
-								   using a model I tuned on five past seasons that beats the trade market at finding undervalued players.
-								   Built with: React 19, TypeScript, Vite, TanStack Query, Tailwind CSS. Hosted on Cloudflare Workers, with KV caching and a daily scheduled data refresh. 
-								   It combines four free data sources: Sleeper, FantasyCalc, nflverse and college stats from ESPN play-by-play
-								</p>
+								<p>A React and TypeScript app that predicts dynasty fantasy football breakouts, using a
+									model I tuned on five past seasons that beats the trade market at finding undervalued players.
+									It runs on Cloudflare Workers with KV caching and a daily scheduled data refresh, and combines four
+									free data sources: Sleeper, FantasyCalc, nflverse and college stats from ESPN play-by-play.</p>
+								<div class="pill-row">
+									<span class="pill">React</span>
+									<span class="pill">TypeScript</span>
+									<span class="pill">TanStack Query</span>
+									<span class="pill">Tailwind CSS</span>
+									<span class="pill">Cloudflare Workers</span>
+								</div>
 								<ul class="project-icons">
-									<li><a href="https://dynasty-data.shortstack-booking.workers.dev/" class="fas fa-link" target="_blank" rel="noopener"></a>
+									<li><a href="https://dynasty-data.shortstack-booking.workers.dev/" class="fas fa-link" target="_blank" rel="noopener"
+											aria-label="Visit Dynasty Data"></a>
 									</li>
 									<li><a href="https://github.com/hardinzw/DynastyData"
-											class="fas fa-code-branch" target="_blank" rel="noopener"></a>
+											class="fas fa-code-branch" target="_blank" rel="noopener"
+											aria-label="Dynasty Data source code on GitHub"></a>
 									</li>
 								</ul>
 							</div>
 						</article>
-						<!-- <article>
-							<a href="https://curlybois2.herokuapp.com/" class="image" target="_blank" rel="noopener"><img
-									src="images/lead-link-crm2.png" alt="lead-link" loading="lazy" /></a>
-							<div class="inner">
-								<h4>Lead Link CRM</h4>
-								<p>This application is a collaborative project built to utilize Express and a MySQL
-									database. Primary responsibility pertained to front-end visualization using
-									Handlebars.js and CSS.</p>
-								<ul class="project-icons">
-									<li><a href="https://curlybois2.herokuapp.com/" class="fas fa-link" target="_blank" rel="noopener"></a></li>
-									<li><a href="https://github.com/hardinzw/Project-2" class="fas fa-code-branch" target="_blank" rel="noopener"></a>
-									</li>
-								</ul>
-							</div>
-						</article>
-						<article>
-							<a href="https://quiet-harbor-53979.herokuapp.com/burgers" class="image" target="_blank" rel="noopener"><img
-									src="images/burgerApp.png" alt="burger-app" loading="lazy" /></a>
-							<div class="inner">
-								<h4>Eat-Da-Burger!</h4>
-								<p>This application is a working demo of a MySQL database connection using Sequelize ORM
-									with routes for adding, deleting, and updating burgers.</p>
-								<ul class="project-icons">
-									<li><a href="https://quiet-harbor-53979.herokuapp.com/burgers"
-											class="fas fa-link" target="_blank" rel="noopener"></a></li>
-									<li><a href="https://github.com/hardinzw/sequelizedBurger"
-											class="fas fa-code-branch" target="_blank" rel="noopener"></a></li>
-								</ul>
-							</div>
-						</article>
-						<article>
-							<a href="https://damp-harbor-76673.herokuapp.com/" class="image" target="_blank" rel="noopener"><img
-									src="images/homepage.png" alt="friend-finder" loading="lazy" /></a>
-							<div class="inner">
-								<h4>Friend Finder Pro</h4>
-								<p>An interactive web application built using Node.js</p>
-								<ul class="project-icons">
-									<li><a href="https://damp-harbor-76673.herokuapp.com/" class="fas fa-link" target="_blank" rel="noopener"></a></li>
-									<li><a href="https://github.com/hardinzw/Friend-Finder"
-											class="fas fa-code-branch" target="_blank" rel="noopener"></a></li>
-								</ul>
-							</div>
-						</article>
-						<article>
-							<a href="https://hardinzw.github.io/Train-Schedule/" class="image" target="_blank" rel="noopener"><img
-									src="images/train-schedules.png" alt="train-sched" loading="lazy" /></a>
-							<div class="inner">
-								<h4>Train Schedules</h4>
-								<p>App created using firebase and moment.js to dynamically display submitted data to a
-									table.</p>
-								<ul class="project-icons">
-									<li><a href="https://hardinzw.github.io/Train-Schedule/" class="fas fa-link" target="_blank" rel="noopener"></a>
-									</li>
-									<li><a href="https://github.com/hardinzw/Train-Schedule.git"
-											class="fas fa-code-branch" target="_blank" rel="noopener"></a></li>
-								</ul>
-							</div>
-						</article>
-						<article>
-							<a href="https://hardinzw.github.io/Trivia-Game/" class="image" target="_blank" rel="noopener"><img
-									src="images/trivia-game.png" alt="trivia-game" loading="lazy" /></a>
-							<div class="inner">
-								<h4>Trivia Trial</h4>
-								<p>Classic trivia game built with Javascript.</p>
-								<ul class="project-icons">
-									<li><a href="https://hardinzw.github.io/Trivia-Game/" class="fas fa-link" target="_blank" rel="noopener"></a></li>
-									<li><a href="https://github.com/hardinzw/Trivia-Game.git"
-											class="fas fa-code-branch" target="_blank" rel="noopener"></a></li>
-								</ul>
-							</div>
-						</article>
-						<article>
-							<a href="https://hardinzw.github.io/GIPHY-Unit/" class="image" target="_blank" rel="noopener"><img
-									src="images/giphy-unit.png" alt="gif-unit" loading="lazy" /></a>
-							<div class="inner">
-								<h4>GIPHY Galore</h4>
-								<p>Project created to display genre based animated gifs using the GIPHY API.</p>
-								<ul class="project-icons">
-									<li><a href="https://hardinzw.github.io/GIPHY-Unit/" class="fas fa-link" target="_blank" rel="noopener"></a></li>
-									<li><a href="https://github.com/hardinzw/GIPHY-Unit.git"
-											class="fas fa-code-branch" target="_blank" rel="noopener"></a></li>
-								</ul>
-							</div>
-						</article>
-						<article>
-							<a href="https://hardinzw.github.io/unit-4-game/" class="image" target="_blank" rel="noopener"><img
-									src="images/crystals.png" alt="crystal-game" loading="lazy" /></a>
-							<div class="inner">
-								<h4>Crystal Collections</h4>
-								<p>Game of numbers built using Javascript.</p>
-								<ul class="project-icons">
-									<li><a href="https://hardinzw.github.io/unit-4-game/" class="fas fa-link" target="_blank" rel="noopener"></a></li>
-									<li><a href="https://github.com/hardinzw/unit-4-game.git"
-											class="fas fa-code-branch" target="_blank" rel="noopener"></a></li>
-								</ul>
-							</div>
-						</article> -->
 					</div>
 				</div>
 			</section>

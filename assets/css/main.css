@@ -2287,6 +2287,22 @@ input, select, textarea {
 		padding-left: 0;
 	}
 
+		/* Only shown once the sidebar collapses (<= 1024px). */
+		ul.actions.mobile-actions {
+			display: none;
+		}
+
+		@media screen and (max-width: 1024px) {
+
+			ul.actions.mobile-actions {
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+			}
+
+		}
+
 		ul.actions li {
 			padding: 0 0 0 1.125em;
 			vertical-align: middle;
@@ -2702,34 +2718,87 @@ input, select, textarea {
 
 /* Features */
 
-	.features article {
-		border-top: solid 3px #2A241E;
-		margin-bottom: 2.25em;
-		padding-top: 2.25em;
+	.features {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(20em, 100%), 1fr));
+		gap: 2em;
 	}
 
-		.features article:first-child {
-			border-top: 0;
-			padding-top: 0;
+		.features article {
+			display: flex;
+			flex-direction: column;
+			background: #221E19;
+			border: solid 2px #2A241E;
+			border-radius: 6px;
+			overflow: hidden;
 		}
 
 		.features article .image {
-			display: inline-block;
-			padding-right: 2.5em;
-			vertical-align: middle;
-			width: 48%;
+			display: block;
+			border-bottom: solid 2px #2A241E;
+			border-radius: 0;
 		}
 
 			.features article .image img {
 				display: block;
+				border-radius: 0;
 				width: 100%;
+				aspect-ratio: 7 / 5;
+				object-fit: cover;
+				object-position: top;
 			}
 
 		.features article .inner {
-			display: inline-block;
-			vertical-align: middle;
-			width: 50%;
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+			padding: 1.5em;
 		}
+
+			.features article .inner p {
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 4;
+				line-clamp: 4;
+				margin-bottom: 1.25em;
+				overflow: hidden;
+			}
+
+				.features article .inner p.expanded {
+					display: block;
+					overflow: visible;
+				}
+
+			.features article .inner .see-more {
+				align-self: flex-start;
+				background: none;
+				border: 0;
+				color: #E8B339;
+				cursor: pointer;
+				font: inherit;
+				font-size: 0.8em;
+				font-weight: 700;
+				margin: -1em 0 1.5em 0;
+				padding: 0;
+			}
+
+				.features article .inner .see-more:hover {
+					text-decoration: underline;
+				}
+
+			.features article .inner .pill-row {
+				gap: 0.45em;
+				margin-bottom: 1.5em;
+			}
+
+				.features article .inner .pill {
+					background: #2A241E;
+					font-size: 0.7em;
+				}
+
+			.features article .inner .project-icons {
+				margin-top: auto;
+			}
 
 			.features article .inner > :last-child {
 				margin-bottom: 0;
@@ -3305,20 +3374,6 @@ input, select, textarea {
 				header.major h2 + p {
 					font-size: 1.5em;
 				}
-
-		/* Features */
-
-			.features article .image {
-				display: block;
-				margin: 0 0 2.25em 0;
-				padding-right: 0;
-				width: 100%;
-			}
-
-			.features article .inner {
-				display: block;
-				width: 100%;
-			}
 
 		/* Header */
 
