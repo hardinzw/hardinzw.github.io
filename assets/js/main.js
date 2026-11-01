@@ -171,6 +171,28 @@
 
 		});
 
+	// Scroll reveal: fade sections in as they enter the viewport.
+		if ('IntersectionObserver' in window
+		&&	!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+
+			var revealObserver = new IntersectionObserver(function(entries) {
+
+				entries.forEach(function(entry) {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('is-visible');
+						revealObserver.unobserve(entry.target);
+					}
+				});
+
+			}, { rootMargin: '0px 0px -10% 0px' });
+
+			$('#main > section').each(function() {
+				this.classList.add('reveal');
+				revealObserver.observe(this);
+			});
+
+		}
+
 	// Scrolly.
 		$('.scrolly').scrolly({
 			speed: 1000,

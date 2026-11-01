@@ -2731,12 +2731,28 @@ input, select, textarea {
 			border: solid 2px #2A241E;
 			border-radius: 6px;
 			overflow: hidden;
+			transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 		}
+
+			@media (hover: hover) {
+
+				.features article:hover {
+					border-color: #E8B339;
+					box-shadow: 0 0.75em 1.5em rgba(0, 0, 0, 0.35);
+					transform: translateY(-4px);
+				}
+
+					.features article:hover .image img {
+						transform: scale(1.04);
+					}
+
+			}
 
 		.features article .image {
 			display: block;
 			border-bottom: solid 2px #2A241E;
 			border-radius: 0;
+			overflow: hidden;
 		}
 
 			.features article .image img {
@@ -2746,6 +2762,7 @@ input, select, textarea {
 				aspect-ratio: 7 / 5;
 				object-fit: cover;
 				object-position: top;
+				transition: transform 0.4s ease;
 			}
 
 		.features article .inner {
@@ -3028,6 +3045,38 @@ input, select, textarea {
 
 	#main > section {
 		border-top: solid 6px #2A241E;
+	}
+
+		/* Scroll reveal: .reveal is added by main.js, so sections stay visible without JS. */
+		#main > section.reveal {
+			opacity: 0;
+			transform: translateY(1.5em);
+			transition: opacity 0.6s ease, transform 0.6s ease;
+		}
+
+			#main > section.reveal.is-visible {
+				opacity: 1;
+				transform: none;
+			}
+
+	@media (prefers-reduced-motion: reduce) {
+
+		#main > section.reveal {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+
+		.features article,
+		.features article .image img {
+			transition: border-color 0.2s ease;
+		}
+
+			.features article:hover,
+			.features article:hover .image img {
+				transform: none !important;
+			}
+
 	}
 
 		#main > section > .container {
